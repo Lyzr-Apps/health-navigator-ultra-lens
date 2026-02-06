@@ -867,6 +867,7 @@ Severity: ${formData.severity}/10.`
             {/* Action Buttons */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <Button
+                type="button"
                 variant="outline"
                 className="w-full"
                 onClick={handleLocationLookup}
@@ -880,6 +881,7 @@ Severity: ${formData.severity}/10.`
                 View Map & Facilities
               </Button>
               <Button
+                type="button"
                 variant="outline"
                 className="w-full"
                 onClick={handleVideoConsultation}
@@ -893,6 +895,7 @@ Severity: ${formData.severity}/10.`
                 Request Consultation
               </Button>
               <Button
+                type="button"
                 variant="outline"
                 className="w-full"
                 onClick={() => setCurrentScreen('history')}
@@ -923,6 +926,7 @@ Severity: ${formData.severity}/10.`
           <div className="max-w-6xl mx-auto">
             <div className="mb-6">
               <Button
+                type="button"
                 variant="ghost"
                 onClick={() => setCurrentScreen('results')}
                 className="mb-4"
@@ -1015,11 +1019,11 @@ Severity: ${formData.severity}/10.`
                     <Separator />
 
                     <div className="space-y-2">
-                      <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                      <Button type="button" className="w-full bg-blue-600 hover:bg-blue-700">
                         <Phone className="mr-2 h-4 w-4" />
                         Call {facility.phone}
                       </Button>
-                      <Button className="w-full" variant="outline">
+                      <Button type="button" className="w-full" variant="outline">
                         <Navigation className="mr-2 h-4 w-4" />
                         Start Navigation
                       </Button>
@@ -1086,6 +1090,7 @@ Severity: ${formData.severity}/10.`
             <div className="flex justify-between items-center mb-6">
               <div className="flex items-center gap-4">
                 <Button
+                  type="button"
                   variant="ghost"
                   onClick={() => setCurrentScreen('results')}
                   className="text-white hover:bg-gray-800"
@@ -1127,6 +1132,7 @@ Severity: ${formData.severity}/10.`
                           <VideoOff className="h-24 w-24 text-gray-600 mx-auto mb-4" />
                           <p className="text-gray-400">Video call not started</p>
                           <Button
+                            type="button"
                             className="mt-4 bg-blue-600 hover:bg-blue-700"
                             onClick={() => setVideoActive(true)}
                           >
@@ -1150,6 +1156,7 @@ Severity: ${formData.severity}/10.`
                   <CardContent className="p-4">
                     <div className="flex justify-center gap-4">
                       <Button
+                        type="button"
                         variant={micMuted ? "destructive" : "secondary"}
                         size="lg"
                         onClick={() => setMicMuted(!micMuted)}
@@ -1158,6 +1165,7 @@ Severity: ${formData.severity}/10.`
                         {micMuted ? <MicOff className="h-5 w-5" /> : <Mic className="h-5 w-5" />}
                       </Button>
                       <Button
+                        type="button"
                         variant={cameraOff ? "destructive" : "secondary"}
                         size="lg"
                         onClick={() => setCameraOff(!cameraOff)}
@@ -1166,6 +1174,7 @@ Severity: ${formData.severity}/10.`
                         {cameraOff ? <VideoOff className="h-5 w-5" /> : <Video className="h-5 w-5" />}
                       </Button>
                       <Button
+                        type="button"
                         variant="secondary"
                         size="lg"
                         className="rounded-full w-14 h-14"
@@ -1173,6 +1182,7 @@ Severity: ${formData.severity}/10.`
                         <Monitor className="h-5 w-5" />
                       </Button>
                       <Button
+                        type="button"
                         variant="destructive"
                         size="lg"
                         onClick={() => {
@@ -1264,7 +1274,7 @@ Severity: ${formData.severity}/10.`
                         className="bg-gray-700 border-gray-600 text-white"
                         disabled
                       />
-                      <Button size="sm" disabled>Send</Button>
+                      <Button type="button" size="sm" disabled>Send</Button>
                     </div>
                   </CardContent>
                 </Card>
@@ -1289,7 +1299,7 @@ Severity: ${formData.severity}/10.`
               <h1 className="text-3xl font-bold text-gray-900 mb-2">Assessment History</h1>
               <p className="text-gray-600">View your past symptom assessments</p>
             </div>
-            <Button variant="outline">
+            <Button type="button" variant="outline">
               <Download className="mr-2 h-4 w-4" />
               Export to PDF
             </Button>
@@ -1301,7 +1311,7 @@ Severity: ${formData.severity}/10.`
                 <History className="h-16 w-16 text-gray-400 mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">No Assessments Yet</h3>
                 <p className="text-gray-600 mb-4">Start your first symptom assessment to see it here</p>
-                <Button onClick={() => setCurrentScreen('assessment')}>
+                <Button type="button" onClick={() => setCurrentScreen('assessment')}>
                   Start Assessment
                 </Button>
               </CardContent>
@@ -1384,7 +1394,7 @@ Severity: ${formData.severity}/10.`
                           </div>
                         )}
 
-                        <Button variant="outline" className="w-full mt-4">
+                        <Button type="button" variant="outline" className="w-full mt-4">
                           <ChevronRight className="mr-2 h-4 w-4" />
                           View Full Report
                         </Button>
@@ -1442,7 +1452,7 @@ Severity: ${formData.severity}/10.`
                 <h1 className="text-3xl font-bold text-gray-900 mb-2">Professional Review Queue</h1>
                 <p className="text-gray-600">Pending patient assessments requiring review</p>
               </div>
-              <Button variant="outline">
+              <Button type="button" variant="outline">
                 <Filter className="mr-2 h-4 w-4" />
                 Filters
               </Button>
@@ -1522,7 +1532,7 @@ Severity: ${formData.severity}/10.`
                         </TableCell>
                         <TableCell>{item.status}</TableCell>
                         <TableCell>
-                          <Button size="sm">Review</Button>
+                          <Button type="button" size="sm">Review</Button>
                         </TableCell>
                       </TableRow>
                     ))}
@@ -1675,7 +1685,7 @@ Severity: ${formData.severity}/10.`
                         <FileText className="h-5 w-5 text-blue-600" />
                         <span className="text-sm">Audit Logs</span>
                       </div>
-                      <Button variant="outline" size="sm">View Logs</Button>
+                      <Button type="button" variant="outline" size="sm">View Logs</Button>
                     </div>
                     <Separator />
                     <div>
@@ -1749,6 +1759,7 @@ Severity: ${formData.severity}/10.`
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-xl font-bold">HealthCare AI</h2>
           <Button
+            type="button"
             variant="ghost"
             size="sm"
             onClick={() => setSidebarOpen(false)}
@@ -1760,6 +1771,7 @@ Severity: ${formData.severity}/10.`
 
         <nav className="space-y-2">
           <button
+            type="button"
             onClick={() => setCurrentScreen('landing')}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
               currentScreen === 'landing' ? 'bg-blue-600' : 'hover:bg-gray-800'
@@ -1770,6 +1782,7 @@ Severity: ${formData.severity}/10.`
           </button>
 
           <button
+            type="button"
             onClick={() => setCurrentScreen('assessment')}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
               currentScreen === 'assessment' ? 'bg-blue-600' : 'hover:bg-gray-800'
@@ -1780,6 +1793,7 @@ Severity: ${formData.severity}/10.`
           </button>
 
           <button
+            type="button"
             onClick={() => setCurrentScreen('history')}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
               currentScreen === 'history' ? 'bg-blue-600' : 'hover:bg-gray-800'
@@ -1791,6 +1805,7 @@ Severity: ${formData.severity}/10.`
 
           {(userRole === 'staff' || userRole === 'admin') && (
             <button
+              type="button"
               onClick={() => setCurrentScreen('queue')}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
                 currentScreen === 'queue' ? 'bg-blue-600' : 'hover:bg-gray-800'
@@ -1803,6 +1818,7 @@ Severity: ${formData.severity}/10.`
 
           {userRole === 'admin' && (
             <button
+              type="button"
               onClick={() => setCurrentScreen('admin')}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
                 currentScreen === 'admin' ? 'bg-blue-600' : 'hover:bg-gray-800'
@@ -1846,6 +1862,7 @@ Severity: ${formData.severity}/10.`
           <div className="flex items-center gap-4">
             {!sidebarOpen && (
               <Button
+                type="button"
                 variant="ghost"
                 size="sm"
                 onClick={() => setSidebarOpen(true)}
@@ -1860,10 +1877,10 @@ Severity: ${formData.severity}/10.`
           </div>
 
           <div className="flex items-center gap-4">
-            <Button variant="ghost" size="sm">
+            <Button type="button" variant="ghost" size="sm">
               <Bell className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="sm">
+            <Button type="button" variant="ghost" size="sm">
               <User className="h-5 w-5" />
             </Button>
           </div>
@@ -1879,6 +1896,7 @@ Severity: ${formData.severity}/10.`
   const FloatingAssistant = () => (
     <>
       <Button
+        type="button"
         className="fixed bottom-6 right-6 rounded-full w-14 h-14 bg-blue-600 hover:bg-blue-700 shadow-lg z-50"
         onClick={() => setAssistantOpen(true)}
       >
@@ -1931,7 +1949,7 @@ Severity: ${formData.severity}/10.`
                 onChange={(e) => setAssistantInput(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleAssistantMessage()}
               />
-              <Button onClick={handleAssistantMessage} disabled={assistantLoading}>
+              <Button type="button" onClick={handleAssistantMessage} disabled={assistantLoading}>
                 Send
               </Button>
             </div>
