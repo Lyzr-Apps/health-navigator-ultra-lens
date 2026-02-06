@@ -546,6 +546,7 @@ Severity: ${formData.severity}/10.`
         <div className="max-w-3xl mx-auto">
           <div className="mb-6">
             <Button
+              type="button"
               variant="ghost"
               onClick={() => setCurrentScreen('landing')}
               className="mb-4"
@@ -663,6 +664,7 @@ Severity: ${formData.severity}/10.`
 
               {/* Submit Button */}
               <Button
+                type="button"
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white py-6 text-lg"
                 onClick={handleAssessment}
                 disabled={!formData.age || !formData.gender || !formData.symptoms || !formData.duration || assessmentLoading}
