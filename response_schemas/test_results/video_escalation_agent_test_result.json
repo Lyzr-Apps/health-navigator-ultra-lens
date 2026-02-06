@@ -1,0 +1,36 @@
+{
+  "agent_name": "Video Escalation Agent",
+  "agent_id": "69858842b90162af337b1ed7",
+  "test_message": "Create a video consultation room for patient ID P12345 with Dr. Johnson (cardiologist)",
+  "expected_purpose": "Independent - Generates Twilio video room tokens for consultations",
+  "timestamp": "2026-02-06T06:27:31.536379",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "room_id": "room_abc123xyz",
+      "room_name": "consultation_with_dr_johnson",
+      "patient_token": "token_patient_xyz789",
+      "doctor_token": "token_doctor_abc456",
+      "room_url": "https://videoconsultation.healthcare/room_abc123xyz",
+      "expires_at": "2023-10-15T18:30:00Z",
+      "room_features": {
+        "recording_enabled": true,
+        "screen_sharing": true,
+        "max_participants": 2,
+        "encryption": "end-to-end"
+      },
+      "connection_instructions": {
+        "patient": "Use the provided link and token to join the room. You will start in the waiting room until Dr. Johnson admits you.",
+        "doctor": "Use the provided link and token to join the room. You have moderator access to admit the patient and start the consultation."
+      },
+      "session_duration_limit": "30 minutes"
+    },
+    "metadata": {
+      "agent_name": "Video Escalation Agent",
+      "timestamp": "2023-10-14T14:00:00Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"room_id\": \"room_abc123xyz\",\n    \"room_name\": \"consultation_with_dr_johnson\",\n    \"patient_token\": \"token_patient_xyz789\",\n    \"doctor_token\": \"token_doctor_abc456\",\n    \"room_url\": \"https://videoconsultation.healthcare/room_abc123xyz\",\n    \"expires_at\": \"2023-10-15T18:30:00Z\",\n    \"room_features\": {\n      \"recording_enabled\": true,\n      \"screen_sharing\": true,\n      \"max_participants\": 2,\n      \"encryption\": \"end-to-end\"\n    },\n    \"connection_instructions\": {\n      \"patient\": \"Use the provided link and token to join the room. You will start in the waiting room until Dr. Johnson admits you.\",\n      \"doctor\": \"Use the provided link and token to join the room. You have moderator access to admit the patient and start the consultation.\"\n    },\n    \"session_duration_limit\": \"30 minutes\"\n  },\n  \"metadata\": {\n    \"agent_name\": \"Video Escalation Agent\",\n    \"timestamp\": \"2023-10-14T14:00:00Z\"\n  }\n}"
+}

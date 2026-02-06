@@ -1,0 +1,50 @@
+{
+  "agent_name": "Risk Scoring Agent",
+  "agent_id": "698587bf07ec48e3dc90a19d",
+  "test_message": "Patient age 45, moderate abdominal pain severity 6/10, duration 2 days, no comorbidities",
+  "expected_purpose": "Sub-agent - Calculates urgency level based on patient data",
+  "timestamp": "2026-02-06T06:26:59.914781",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "risk_score": 55,
+      "urgency_level": "SOON",
+      "risk_factors": [
+        {
+          "factor_name": "Age",
+          "weight": 30,
+          "contribution": "Moderate risk",
+          "reasoning": "Patient age of 45 is not within pediatric or elderly ranges, assigning moderate weight."
+        },
+        {
+          "factor_name": "Symptom Severity",
+          "weight": 60,
+          "contribution": "Moderate risk",
+          "reasoning": "Moderate abdominal pain at severity 6/10 suggests a more significant concern, increasing risk."
+        },
+        {
+          "factor_name": "Duration",
+          "weight": 50,
+          "contribution": "Moderate risk",
+          "reasoning": "Pain duration of 2 days is neither acute nor chronic, assigning moderate weight."
+        },
+        {
+          "factor_name": "Comorbidities",
+          "weight": 0,
+          "contribution": "Low risk",
+          "reasoning": "No comorbidities reported, reducing overall risk."
+        }
+      ],
+      "composite_assessment": "The patient's age, symptom severity, and duration of symptoms suggest an intermediate level of concern, with no immediate life-threatening indicators.",
+      "recommended_timeframe": "1-3 days",
+      "confidence_level": "high"
+    },
+    "metadata": {
+      "agent_name": "Risk Scoring Agent",
+      "timestamp": "2023-11-29T08:10:31Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"risk_score\": 55,\n    \"urgency_level\": \"SOON\",\n    \"risk_factors\": [\n      {\n        \"factor_name\": \"Age\",\n        \"weight\": 30,\n        \"contribution\": \"Moderate risk\",\n        \"reasoning\": \"Patient age of 45 is not within pediatric or elderly ranges, assigning moderate weight.\"\n      },\n      {\n        \"factor_name\": \"Symptom Severity\",\n        \"weight\": 60,\n        \"contribution\": \"Moderate risk\",\n        \"reasoning\": \"Moderate abdominal pain at severity 6/10 suggests a more significant concern, increasing risk.\"\n      },\n      {\n        \"factor_name\": \"Duration\",\n        \"weight\": 50,\n        \"contribution\": \"Moderate risk\",\n        \"reasoning\": \"Pain duration of 2 days is neither acute nor chronic, assigning moderate weight.\"\n      },\n      {\n        \"factor_name\": \"Comorbidities\",\n        \"weight\": 0,\n        \"contribution\": \"Low risk\",\n        \"reasoning\": \"No comorbidities reported, reducing overall risk.\"\n      }\n    ],\n    \"composite_assessment\": \"The patient's age, symptom severity, and duration of symptoms suggest an intermediate level of concern, with no immediate life-threatening indicators.\",\n    \"recommended_timeframe\": \"1-3 days\",\n    \"confidence_level\": \"high\"\n  },\n  \"metadata\": {\n    \"agent_name\": \"Risk Scoring Agent\",\n    \"timestamp\": \"2023-11-29T08:10:31Z\"\n  }\n}"
+}

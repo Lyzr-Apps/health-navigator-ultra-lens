@@ -1,0 +1,102 @@
+{
+  "agent_name": "Action Planning Agent",
+  "agent_id": "698588081caa4e686dd66e06",
+  "agent_purpose": "action_planning",
+  "description": "Generates actionable next steps based on assessment urgency level",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "urgency_level": "string",
+      "immediate_actions": [
+        "string"
+      ],
+      "self_monitoring_guidelines": [
+        "string"
+      ],
+      "when_to_seek_help": [
+        "string"
+      ],
+      "preparation_for_visit": [
+        "string"
+      ],
+      "lifestyle_considerations": [
+        "string"
+      ],
+      "follow_up_timeline": "string",
+      "action_summary": "string",
+      "important_disclaimer": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "urgency_level": "SOON",
+      "immediate_actions": [
+        "Schedule an appointment with your gastroenterologist within 1-3 days."
+      ],
+      "self_monitoring_guidelines": [
+        "Keep a daily symptom diary noting any changes or new symptoms.",
+        "Monitor for any worsening of your symptoms."
+      ],
+      "when_to_seek_help": [
+        "Contact your doctor if your symptoms worsen before your scheduled appointment.",
+        "Seek immediate care if you experience severe symptoms."
+      ],
+      "preparation_for_visit": [
+        "Prepare a list of your current medications and any symptoms you have been experiencing.",
+        "Write down any questions or concerns you would like to discuss with the doctor."
+      ],
+      "lifestyle_considerations": [
+        "Stay hydrated and maintain a balanced diet.",
+        "Avoid any known triggers that may exacerbate your symptoms."
+      ],
+      "follow_up_timeline": "Schedule an appointment with your gastroenterologist within 1-3 days.",
+      "action_summary": "Ensure to see your gastroenterologist soon to address your current symptoms with professional evaluation.",
+      "important_disclaimer": "This plan is for guidance only and does not replace professional medical advice. Please consult with your healthcare provider for any medical concerns."
+    },
+    "metadata": {
+      "agent_name": "Action Planning Agent",
+      "timestamp": "2023-11-29T10:21:35Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T06:27:27.701644",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "urgency_level": "SOON",
+      "immediate_actions": [
+        "Schedule an appointment with your gastroenterologist within 1-3 days."
+      ],
+      "self_monitoring_guidelines": [
+        "Keep a daily symptom diary noting any changes or new symptoms.",
+        "Monitor for any worsening of your symptoms."
+      ],
+      "when_to_seek_help": [
+        "Contact your doctor if your symptoms worsen before your scheduled appointment.",
+        "Seek immediate care if you experience severe symptoms."
+      ],
+      "preparation_for_visit": [
+        "Prepare a list of your current medications and any symptoms you have been experiencing.",
+        "Write down any questions or concerns you would like to discuss with the doctor."
+      ],
+      "lifestyle_considerations": [
+        "Stay hydrated and maintain a balanced diet.",
+        "Avoid any known triggers that may exacerbate your symptoms."
+      ],
+      "follow_up_timeline": "Schedule an appointment with your gastroenterologist within 1-3 days.",
+      "action_summary": "Ensure to see your gastroenterologist soon to address your current symptoms with professional evaluation.",
+      "important_disclaimer": "This plan is for guidance only and does not replace professional medical advice. Please consult with your healthcare provider for any medical concerns."
+    },
+    "metadata": {
+      "agent_name": "Action Planning Agent",
+      "timestamp": "2023-11-29T10:21:35Z"
+    }
+  },
+  "test_passed": true
+}

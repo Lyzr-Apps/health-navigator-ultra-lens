@@ -1,0 +1,38 @@
+{
+  "agent_name": "Red Flag Detection Agent",
+  "agent_id": "698587a91caa4e686dd66df4",
+  "test_message": "Sudden severe headache, confusion, slurred speech, and numbness on right side",
+  "expected_purpose": "Sub-agent - Detects critical symptom combinations requiring immediate care",
+  "timestamp": "2026-02-06T06:26:55.695815",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "red_flag_detected": true,
+      "severity": "CRITICAL",
+      "red_flag_patterns": [
+        {
+          "pattern_name": "Neurological",
+          "matched_symptoms": [
+            "sudden severe headache",
+            "confusion",
+            "slurred speech",
+            "numbness on right side"
+          ],
+          "severity": "CRITICAL",
+          "reason": "These symptoms are indicative of a potential stroke or other serious neurological event and require immediate medical attention."
+        }
+      ],
+      "immediate_action_required": true,
+      "recommended_action": "Call 911 immediately for emergency medical assistance.",
+      "escalation_triggered": true,
+      "safety_message": "These symptoms are potentially life-threatening and require immediate evaluation by a healthcare professional. Do not delay in seeking emergency help."
+    },
+    "metadata": {
+      "agent_name": "Red Flag Detection Agent",
+      "timestamp": "2023-11-30T16:31:39Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"red_flag_detected\": true,\n    \"severity\": \"CRITICAL\",\n    \"red_flag_patterns\": [\n      {\n        \"pattern_name\": \"Neurological\",\n        \"matched_symptoms\": [\"sudden severe headache\", \"confusion\", \"slurred speech\", \"numbness on right side\"],\n        \"severity\": \"CRITICAL\",\n        \"reason\": \"These symptoms are indicative of a potential stroke or other serious neurological event and require immediate medical attention.\"\n      }\n    ],\n    \"immediate_action_required\": true,\n    \"recommended_action\": \"Call 911 immediately for emergency medical assistance.\",\n    \"escalation_triggered\": true,\n    \"safety_message\": \"These symptoms are potentially life-threatening and require immediate evaluation by a healthcare professional. Do not delay in seeking emergency help.\"\n  },\n  \"metadata\": {\n    \"agent_name\": \"Red Flag Detection Agent\",\n    \"timestamp\": \"2023-11-30T16:31:39Z\"\n  }\n}"
+}

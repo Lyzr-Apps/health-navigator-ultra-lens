@@ -1,0 +1,93 @@
+{
+  "agent_name": "EHR Integration Agent",
+  "agent_id": "6985889bb90162af337b1ee6",
+  "agent_purpose": "ehr_integration",
+  "description": "Syncs patient data with external EHR systems using FHIR/HL7 standards",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "sync_id": "string",
+      "ehr_system": "string",
+      "sync_direction": "string",
+      "resources_synced": [
+        {
+          "resource_type": "string",
+          "resource_id": "string",
+          "fhir_id": "string",
+          "sync_status": "string",
+          "timestamp": "string"
+        }
+      ],
+      "total_records": "number",
+      "successful_syncs": "number",
+      "failed_syncs": "number",
+      "errors": [
+        "any"
+      ],
+      "consent_verified": "boolean",
+      "audit_log_id": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "sync_id": "sync-A-2024-001",
+      "ehr_system": "Epic",
+      "sync_direction": "outbound",
+      "resources_synced": [
+        {
+          "resource_type": "Observation",
+          "resource_id": "A-2024-001",
+          "fhir_id": "obs-75684",
+          "sync_status": "success",
+          "timestamp": "2023-10-14T15:23:00Z"
+        }
+      ],
+      "total_records": 1,
+      "successful_syncs": 1,
+      "failed_syncs": 0,
+      "errors": [],
+      "consent_verified": true,
+      "audit_log_id": "audit-2350948"
+    },
+    "metadata": {
+      "agent_name": "EHR Integration Agent",
+      "timestamp": "2023-10-14T15:23:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T06:27:51.288498",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "sync_id": "sync-A-2024-001",
+      "ehr_system": "Epic",
+      "sync_direction": "outbound",
+      "resources_synced": [
+        {
+          "resource_type": "Observation",
+          "resource_id": "A-2024-001",
+          "fhir_id": "obs-75684",
+          "sync_status": "success",
+          "timestamp": "2023-10-14T15:23:00Z"
+        }
+      ],
+      "total_records": 1,
+      "successful_syncs": 1,
+      "failed_syncs": 0,
+      "errors": [],
+      "consent_verified": true,
+      "audit_log_id": "audit-2350948"
+    },
+    "metadata": {
+      "agent_name": "EHR Integration Agent",
+      "timestamp": "2023-10-14T15:23:00Z"
+    }
+  },
+  "test_passed": true
+}

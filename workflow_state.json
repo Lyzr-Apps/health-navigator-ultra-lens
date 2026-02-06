@@ -1,0 +1,138 @@
+{
+  "workflow_type": "manager_subagent_with_independent",
+  "created_at": "2026-02-06T00:00:00Z",
+  "total_agents": 12,
+  "agents": {
+    "manager": {
+      "triage_orchestrator": {
+        "agent_id": "69858825e17e33c11eed19c6",
+        "name": "Triage Orchestrator",
+        "type": "manager",
+        "description": "Coordinates all triage sub-agents, aggregates results, ensures safety checkpoints, and routes to professional review queue",
+        "manages": [
+          "69858793094c8b2d4207dcb9",
+          "698587a91caa4e686dd66df4",
+          "698587bf07ec48e3dc90a19d",
+          "698587d707ec48e3dc90a19e",
+          "698587f0e17e33c11eed19bd",
+          "698588081caa4e686dd66e06"
+        ]
+      }
+    },
+    "sub_agents": {
+      "symptom_extraction_agent": {
+        "agent_id": "69858793094c8b2d4207dcb9",
+        "name": "Symptom Extraction Agent",
+        "type": "sub_agent",
+        "description": "Converts unstructured symptom text into structured medical data with entity extraction"
+      },
+      "red_flag_detection_agent": {
+        "agent_id": "698587a91caa4e686dd66df4",
+        "name": "Red Flag Detection Agent",
+        "type": "sub_agent",
+        "description": "Detects critical symptom combinations requiring immediate medical attention and triggers emergency escalation protocols"
+      },
+      "risk_scoring_agent": {
+        "agent_id": "698587bf07ec48e3dc90a19d",
+        "name": "Risk Scoring Agent",
+        "type": "sub_agent",
+        "description": "Calculates weighted risk score based on age, symptom severity, duration, comorbidities and outputs urgency level"
+      },
+      "specialist_routing_agent": {
+        "agent_id": "698587d707ec48e3dc90a19e",
+        "name": "Specialist Routing Agent",
+        "type": "sub_agent",
+        "description": "Maps patient symptoms to appropriate medical specialist categories"
+      },
+      "safety_reflection_agent": {
+        "agent_id": "698587f0e17e33c11eed19bd",
+        "name": "Safety Reflection Agent",
+        "type": "sub_agent",
+        "description": "Validates all agent outputs contain mandatory medical disclaimers, appropriate tone, and no diagnosis or prescription language"
+      },
+      "action_planning_agent": {
+        "agent_id": "698588081caa4e686dd66e06",
+        "name": "Action Planning Agent",
+        "type": "sub_agent",
+        "description": "Generates appropriate action recommendations based on urgency level after professional approval"
+      }
+    },
+    "independent_agents": {
+      "video_escalation_agent": {
+        "agent_id": "69858842b90162af337b1ed7",
+        "name": "Video Escalation Agent",
+        "type": "independent",
+        "description": "Generates secure Twilio video room tokens and manages role-based access for doctor-patient video consultations",
+        "trigger": "Request Consultation on Results Page"
+      },
+      "location_routing_agent": {
+        "agent_id": "69858862ab4bf65a66ad07bc",
+        "name": "Location & Routing Agent",
+        "type": "independent",
+        "description": "Finds nearest suitable hospital, calculates distance and traffic-aware ETA, returns route polyline",
+        "trigger": "View Map on Results Page"
+      },
+      "assistant_chatbot_agent": {
+        "agent_id": "698588802237a2c55706b02a",
+        "name": "Assistant Chatbot Agent",
+        "type": "independent",
+        "description": "Handles app navigation queries only; redirects medical questions to triage",
+        "trigger": "Ask Assistant floating button on all pages"
+      },
+      "ehr_integration_agent": {
+        "agent_id": "6985889bb90162af337b1ee6",
+        "name": "EHR Integration Agent",
+        "type": "independent",
+        "description": "Syncs assessment data with external Electronic Health Records systems via FHIR/HL7 adapters",
+        "trigger": "Auto post-assessment completion"
+      },
+      "insurance_verification_agent": {
+        "agent_id": "698588bb1caa4e686dd66e26",
+        "name": "Insurance Verification Agent",
+        "type": "independent",
+        "description": "Verifies patient eligibility and coverage before consultations",
+        "trigger": "Verify Coverage on Video Page"
+      }
+    }
+  },
+  "workflow_flow": {
+    "entry_point": "triage_orchestrator",
+    "triage_flow": [
+      "Input → Triage Orchestrator",
+      "Orchestrator → Symptom Extraction, Red Flag Detection, Risk Scoring, Specialist Routing, Safety Reflection (parallel)",
+      "All Sub-agents → Professional Review Checkpoint",
+      "Professional Review → Action Planning Agent",
+      "Action Planning → Output"
+    ],
+    "independent_triggers": {
+      "video_consultation": "User-triggered from Results Page",
+      "location_routing": "User-triggered from Results Page",
+      "assistant_chatbot": "User-triggered from any page",
+      "ehr_sync": "Auto-triggered post-assessment",
+      "insurance_verification": "User-triggered from Video Page"
+    }
+  },
+  "response_schemas_created": [
+    "symptom_extraction_agent_response.json",
+    "red_flag_detection_agent_response.json",
+    "risk_scoring_agent_response.json",
+    "specialist_routing_agent_response.json",
+    "safety_reflection_agent_response.json",
+    "action_planning_agent_response.json",
+    "triage_orchestrator_response.json",
+    "video_escalation_agent_response.json",
+    "location_routing_agent_response.json",
+    "assistant_chatbot_agent_response.json",
+    "ehr_integration_agent_response.json",
+    "insurance_verification_agent_response.json"
+  ],
+  "safety_features": [
+    "No diagnosis or prescription capabilities",
+    "Mandatory professional review checkpoint",
+    "Emergency red flag detection and escalation",
+    "HIPAA/GDPR compliance focus",
+    "Calm, supportive medical tone enforcement",
+    "Comprehensive medical disclaimers"
+  ],
+  "status": "complete"
+}

@@ -1,0 +1,33 @@
+{
+  "agent_name": "Assistant Chatbot Agent",
+  "agent_id": "698588802237a2c55706b02a",
+  "test_message": "How do I book a video consultation with a doctor?",
+  "expected_purpose": "Independent - Handles navigation queries only",
+  "timestamp": "2026-02-06T06:27:48.716858",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "response_type": "navigation_help",
+      "message": "I can help with that! Here's how to book a video consultation with a doctor:",
+      "suggested_actions": [
+        {
+          "action_label": "Book Video Consultation",
+          "action_type": "navigate",
+          "action_target": "video_consultation_booking_page"
+        }
+      ],
+      "related_features": [
+        "Book Video Consultation",
+        "Find Hospitals"
+      ],
+      "needs_triage_redirect": false
+    },
+    "metadata": {
+      "agent_name": "Assistant Chatbot Agent",
+      "timestamp": "2023-10-14T12:00:00Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"response_type\": \"navigation_help\",\n    \"message\": \"I can help with that! Here's how to book a video consultation with a doctor:\",\n    \"suggested_actions\": [\n      {\n        \"action_label\": \"Book Video Consultation\",\n        \"action_type\": \"navigate\",\n        \"action_target\": \"video_consultation_booking_page\"\n      }\n    ],\n    \"related_features\": [\"Book Video Consultation\", \"Find Hospitals\"],\n    \"needs_triage_redirect\": false\n  },\n  \"metadata\": {\n    \"agent_name\": \"Assistant Chatbot Agent\",\n    \"timestamp\": \"2023-10-14T12:00:00Z\"\n  }\n}"
+}

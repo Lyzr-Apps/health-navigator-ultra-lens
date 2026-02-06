@@ -1,0 +1,37 @@
+{
+  "agent_name": "EHR Integration Agent",
+  "agent_id": "6985889bb90162af337b1ee6",
+  "test_message": "Sync assessment A-2024-001 for patient John Doe (MRN: 123456) to Epic EHR system",
+  "expected_purpose": "Independent - Syncs assessment data with EHR systems",
+  "timestamp": "2026-02-06T06:27:51.288033",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "sync_id": "sync-A-2024-001",
+      "ehr_system": "Epic",
+      "sync_direction": "outbound",
+      "resources_synced": [
+        {
+          "resource_type": "Observation",
+          "resource_id": "A-2024-001",
+          "fhir_id": "obs-75684",
+          "sync_status": "success",
+          "timestamp": "2023-10-14T15:23:00Z"
+        }
+      ],
+      "total_records": 1,
+      "successful_syncs": 1,
+      "failed_syncs": 0,
+      "errors": [],
+      "consent_verified": true,
+      "audit_log_id": "audit-2350948"
+    },
+    "metadata": {
+      "agent_name": "EHR Integration Agent",
+      "timestamp": "2023-10-14T15:23:00Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"sync_id\": \"sync-A-2024-001\",\n    \"ehr_system\": \"Epic\",\n    \"sync_direction\": \"outbound\",\n    \"resources_synced\": [\n      {\n        \"resource_type\": \"Observation\",\n        \"resource_id\": \"A-2024-001\",\n        \"fhir_id\": \"obs-75684\",\n        \"sync_status\": \"success\",\n        \"timestamp\": \"2023-10-14T15:23:00Z\"\n      }\n    ],\n    \"total_records\": 1,\n    \"successful_syncs\": 1,\n    \"failed_syncs\": 0,\n    \"errors\": [],\n    \"consent_verified\": true,\n    \"audit_log_id\": \"audit-2350948\"\n  },\n  \"metadata\": {\n    \"agent_name\": \"EHR Integration Agent\",\n    \"timestamp\": \"2023-10-14T15:23:00Z\"\n  }\n}"
+}

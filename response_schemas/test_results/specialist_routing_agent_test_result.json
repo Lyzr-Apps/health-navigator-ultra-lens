@@ -1,0 +1,42 @@
+{
+  "agent_name": "Specialist Routing Agent",
+  "agent_id": "698587d707ec48e3dc90a19e",
+  "test_message": "Persistent joint pain in knees and wrists, morning stiffness, swelling",
+  "expected_purpose": "Sub-agent - Maps symptoms to appropriate medical specialist",
+  "timestamp": "2026-02-06T06:27:04.271819",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "primary_specialist": {
+        "specialty": "Rheumatology",
+        "reason": "The symptoms of persistent joint pain in knees and wrists, morning stiffness, and swelling suggest possible inflammatory or autoimmune conditions such as arthritis.",
+        "confidence": "high"
+      },
+      "secondary_specialists": [
+        {
+          "specialty": "Orthopedics",
+          "reason": "Orthopedics may help evaluate the structural aspects of the joints and address any mechanical issues contributing to the pain."
+        },
+        {
+          "specialty": "Primary Care",
+          "reason": "To coordinate overall care and manage any general health concerns related to the symptoms."
+        }
+      ],
+      "affected_systems": [
+        "Musculoskeletal"
+      ],
+      "routing_summary": "Persistent joint pain and swelling alongside morning stiffness are indicative of potential rheumatologic conditions, warranting a primary consultation with a rheumatologist. Orthopedic and primary care specialists can provide further support and management.",
+      "alternative_care_options": [
+        "Physical Therapy",
+        "Pain Management Clinics"
+      ]
+    },
+    "metadata": {
+      "agent_name": "Specialist Routing Agent",
+      "timestamp": "2023-10-06T11:22:33Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"primary_specialist\": {\n      \"specialty\": \"Rheumatology\",\n      \"reason\": \"The symptoms of persistent joint pain in knees and wrists, morning stiffness, and swelling suggest possible inflammatory or autoimmune conditions such as arthritis.\",\n      \"confidence\": \"high\"\n    },\n    \"secondary_specialists\": [\n      {\n        \"specialty\": \"Orthopedics\",\n        \"reason\": \"Orthopedics may help evaluate the structural aspects of the joints and address any mechanical issues contributing to the pain.\"\n      },\n      {\n        \"specialty\": \"Primary Care\",\n        \"reason\": \"To coordinate overall care and manage any general health concerns related to the symptoms.\"\n      }\n    ],\n    \"affected_systems\": [\"Musculoskeletal\"],\n    \"routing_summary\": \"Persistent joint pain and swelling alongside morning stiffness are indicative of potential rheumatologic conditions, warranting a primary consultation with a rheumatologist. Orthopedic and primary care specialists can provide further support and management.\",\n    \"alternative_care_options\": [\"Physical Therapy\", \"Pain Management Clinics\"]\n  },\n  \"metadata\": {\n    \"agent_name\": \"Specialist Routing Agent\",\n    \"timestamp\": \"2023-10-06T11:22:33Z\"\n  }\n}"
+}

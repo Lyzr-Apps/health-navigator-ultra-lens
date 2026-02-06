@@ -1,0 +1,58 @@
+{
+  "agent_name": "Insurance Verification Agent",
+  "agent_id": "698588bb1caa4e686dd66e26",
+  "test_message": "Verify insurance coverage for patient Sarah Williams, Member ID: BC987654, DOB: 1985-06-15, for telemedicine consultation",
+  "expected_purpose": "Independent - Verifies coverage before consultations",
+  "timestamp": "2026-02-06T06:27:55.634630",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "verification_id": "VER123456789",
+      "coverage_status": "ACTIVE",
+      "insurance_details": {
+        "payer_name": "BCBS",
+        "member_id": "BC987654",
+        "group_number": "GRP123456",
+        "plan_name": "Premium Plus Plan",
+        "effective_date": "2023-01-01",
+        "termination_date": "2023-12-31"
+      },
+      "telehealth_coverage": {
+        "covered": true,
+        "copay_amount": 30.0,
+        "coinsurance_percentage": 20,
+        "requires_authorization": false,
+        "visit_limit": "10 visits per year",
+        "restrictions": [
+          "Video consultation only",
+          "Must use in-network provider"
+        ]
+      },
+      "financial_summary": {
+        "estimated_patient_cost": 30.0,
+        "deductible_remaining": 500.0,
+        "out_of_pocket_remaining": 2000.0,
+        "in_network": true
+      },
+      "authorization_requirements": {
+        "pre_auth_required": false,
+        "referral_required": false,
+        "auth_status": "not_required",
+        "auth_number": ""
+      },
+      "verification_timestamp": "2023-11-01T12:00:00Z",
+      "data_source": "real_time_api",
+      "coverage_notes": [
+        "Telehealth visits are covered under the Premium Plus Plan."
+      ],
+      "billing_disclaimer": "Coverage verification is not a guarantee of payment. Final coverage is determined by the insurance payer."
+    },
+    "metadata": {
+      "agent_name": "Insurance Verification Agent",
+      "timestamp": "2023-11-01T12:00:00Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"verification_id\": \"VER123456789\",\n    \"coverage_status\": \"ACTIVE\",\n    \"insurance_details\": {\n      \"payer_name\": \"BCBS\",\n      \"member_id\": \"BC987654\",\n      \"group_number\": \"GRP123456\",\n      \"plan_name\": \"Premium Plus Plan\",\n      \"effective_date\": \"2023-01-01\",\n      \"termination_date\": \"2023-12-31\"\n    },\n    \"telehealth_coverage\": {\n      \"covered\": true,\n      \"copay_amount\": 30.0,\n      \"coinsurance_percentage\": 20,\n      \"requires_authorization\": false,\n      \"visit_limit\": \"10 visits per year\",\n      \"restrictions\": [\"Video consultation only\", \"Must use in-network provider\"]\n    },\n    \"financial_summary\": {\n      \"estimated_patient_cost\": 30.0,\n      \"deductible_remaining\": 500.0,\n      \"out_of_pocket_remaining\": 2000.0,\n      \"in_network\": true\n    },\n    \"authorization_requirements\": {\n      \"pre_auth_required\": false,\n      \"referral_required\": false,\n      \"auth_status\": \"not_required\",\n      \"auth_number\": \"\"\n    },\n    \"verification_timestamp\": \"2023-11-01T12:00:00Z\",\n    \"data_source\": \"real_time_api\",\n    \"coverage_notes\": [\"Telehealth visits are covered under the Premium Plus Plan.\"],\n    \"billing_disclaimer\": \"Coverage verification is not a guarantee of payment. Final coverage is determined by the insurance payer.\"\n  },\n  \"metadata\": {\n    \"agent_name\": \"Insurance Verification Agent\",\n    \"timestamp\": \"2023-11-01T12:00:00Z\"\n  }\n}"
+}

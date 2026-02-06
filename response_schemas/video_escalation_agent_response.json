@@ -1,0 +1,88 @@
+{
+  "agent_name": "Video Escalation Agent",
+  "agent_id": "69858842b90162af337b1ed7",
+  "agent_purpose": "video_consultation",
+  "description": "Manages secure video consultations between patients and doctors",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "room_id": "string",
+      "room_name": "string",
+      "patient_token": "string",
+      "doctor_token": "string",
+      "room_url": "string",
+      "expires_at": "string",
+      "room_features": {
+        "recording_enabled": "boolean",
+        "screen_sharing": "boolean",
+        "max_participants": "number",
+        "encryption": "string"
+      },
+      "connection_instructions": {
+        "patient": "string",
+        "doctor": "string"
+      },
+      "session_duration_limit": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "room_id": "room_abc123xyz",
+      "room_name": "consultation_with_dr_johnson",
+      "patient_token": "token_patient_xyz789",
+      "doctor_token": "token_doctor_abc456",
+      "room_url": "https://videoconsultation.healthcare/room_abc123xyz",
+      "expires_at": "2023-10-15T18:30:00Z",
+      "room_features": {
+        "recording_enabled": true,
+        "screen_sharing": true,
+        "max_participants": 2,
+        "encryption": "end-to-end"
+      },
+      "connection_instructions": {
+        "patient": "Use the provided link and token to join the room. You will start in the waiting room until Dr. Johnson admits you.",
+        "doctor": "Use the provided link and token to join the room. You have moderator access to admit the patient and start the consultation."
+      },
+      "session_duration_limit": "30 minutes"
+    },
+    "metadata": {
+      "agent_name": "Video Escalation Agent",
+      "timestamp": "2023-10-14T14:00:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T06:27:31.537051",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "room_id": "room_abc123xyz",
+      "room_name": "consultation_with_dr_johnson",
+      "patient_token": "token_patient_xyz789",
+      "doctor_token": "token_doctor_abc456",
+      "room_url": "https://videoconsultation.healthcare/room_abc123xyz",
+      "expires_at": "2023-10-15T18:30:00Z",
+      "room_features": {
+        "recording_enabled": true,
+        "screen_sharing": true,
+        "max_participants": 2,
+        "encryption": "end-to-end"
+      },
+      "connection_instructions": {
+        "patient": "Use the provided link and token to join the room. You will start in the waiting room until Dr. Johnson admits you.",
+        "doctor": "Use the provided link and token to join the room. You have moderator access to admit the patient and start the consultation."
+      },
+      "session_duration_limit": "30 minutes"
+    },
+    "metadata": {
+      "agent_name": "Video Escalation Agent",
+      "timestamp": "2023-10-14T14:00:00Z"
+    }
+  },
+  "test_passed": true
+}

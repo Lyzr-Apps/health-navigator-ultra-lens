@@ -1,0 +1,62 @@
+{
+  "agent_name": "Location & Routing Agent",
+  "agent_id": "69858862ab4bf65a66ad07bc",
+  "test_message": "Find nearest emergency room for patient at coordinates 37.7749, -122.4194 with cardiac emergency",
+  "expected_purpose": "Independent - Finds nearest hospital with ETA",
+  "timestamp": "2026-02-06T06:27:35.859907",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "patient_location": {
+        "latitude": 37.7749,
+        "longitude": -122.4194,
+        "address": "San Francisco, CA, USA"
+      },
+      "recommended_facilities": [
+        {
+          "facility_name": "Zuckerberg San Francisco General Hospital",
+          "facility_type": "ER",
+          "address": "1001 Potrero Ave, San Francisco, CA 94110, USA",
+          "phone": "+1 628-206-8000",
+          "distance_miles": 2.5,
+          "eta_minutes": 10,
+          "coordinates": {
+            "lat": 37.7551,
+            "lng": -122.4049
+          },
+          "services": [
+            "Emergency Room",
+            "Cardiac Care",
+            "Trauma Center"
+          ],
+          "accepts_insurance": true,
+          "current_status": "24hours"
+        }
+      ],
+      "primary_route": {
+        "route_polyline": "abc123def456...",
+        "total_distance": "2.5 miles",
+        "total_duration": "10 minutes",
+        "traffic_conditions": "moderate",
+        "turn_by_turn": [
+          "Head southeast on Market St toward 5th St",
+          "Turn left onto 10th St",
+          "Continue onto Potrero Ave",
+          "Turn right onto 23rd St"
+        ]
+      },
+      "alternative_routes": [],
+      "emergency_contacts": {
+        "emergency_services": "911",
+        "poison_control": "1-800-222-1222"
+      }
+    },
+    "metadata": {
+      "agent_name": "Location & Routing Agent",
+      "timestamp": "2023-10-01T12:00:00Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"patient_location\": {\n      \"latitude\": 37.7749,\n      \"longitude\": -122.4194,\n      \"address\": \"San Francisco, CA, USA\"\n    },\n    \"recommended_facilities\": [\n      {\n        \"facility_name\": \"Zuckerberg San Francisco General Hospital\",\n        \"facility_type\": \"ER\",\n        \"address\": \"1001 Potrero Ave, San Francisco, CA 94110, USA\",\n        \"phone\": \"+1 628-206-8000\",\n        \"distance_miles\": 2.5,\n        \"eta_minutes\": 10,\n        \"coordinates\": {\"lat\": 37.7551, \"lng\": -122.4049},\n        \"services\": [\"Emergency Room\", \"Cardiac Care\", \"Trauma Center\"],\n        \"accepts_insurance\": true,\n        \"current_status\": \"24hours\"\n      }\n    ],\n    \"primary_route\": {\n      \"route_polyline\": \"abc123def456...\",\n      \"total_distance\": \"2.5 miles\",\n      \"total_duration\": \"10 minutes\",\n      \"traffic_conditions\": \"moderate\",\n      \"turn_by_turn\": [\n        \"Head southeast on Market St toward 5th St\",\n        \"Turn left onto 10th St\",\n        \"Continue onto Potrero Ave\",\n        \"Turn right onto 23rd St\"\n      ]\n    },\n    \"alternative_routes\": [],\n    \"emergency_contacts\": {\n      \"emergency_services\": \"911\",\n      \"poison_control\": \"1-800-222-1222\"\n    }\n  },\n  \"metadata\": {\n    \"agent_name\": \"Location & Routing Agent\",\n    \"timestamp\": \"2023-10-01T12:00:00Z\"\n  }\n}"
+}

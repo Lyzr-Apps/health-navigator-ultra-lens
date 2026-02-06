@@ -1,0 +1,47 @@
+{
+  "agent_name": "Symptom Extraction Agent",
+  "agent_id": "69858793094c8b2d4207dcb9",
+  "test_message": "I've had a persistent headache for 3 days, mild fever, and sensitivity to light",
+  "expected_purpose": "Sub-agent - Converts unstructured symptoms to structured data",
+  "timestamp": "2026-02-06T06:26:52.481017",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "extracted_symptoms": [
+        {
+          "symptom_name": "headache",
+          "body_location": "head",
+          "severity": "persistent",
+          "duration": "3 days",
+          "frequency": "constant",
+          "additional_details": "None"
+        },
+        {
+          "symptom_name": "fever",
+          "body_location": "systemic",
+          "severity": "mild",
+          "duration": "3 days",
+          "frequency": "constant",
+          "additional_details": "Associated with headache"
+        },
+        {
+          "symptom_name": "sensitivity to light",
+          "body_location": "eyes",
+          "severity": "not specified",
+          "duration": "3 days",
+          "frequency": "constant",
+          "additional_details": "Associated with headache"
+        }
+      ],
+      "ambiguous_items": [],
+      "structured_summary": "The patient reports a persistent headache located in the head, accompanied by a mild fever and sensitivity to light, all lasting for 3 days."
+    },
+    "metadata": {
+      "agent_name": "Symptom Extraction Agent",
+      "timestamp": "2023-10-01T12:00:00Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"extracted_symptoms\": [\n      {\n        \"symptom_name\": \"headache\",\n        \"body_location\": \"head\",\n        \"severity\": \"persistent\",\n        \"duration\": \"3 days\",\n        \"frequency\": \"constant\",\n        \"additional_details\": \"None\"\n      },\n      {\n        \"symptom_name\": \"fever\",\n        \"body_location\": \"systemic\",\n        \"severity\": \"mild\",\n        \"duration\": \"3 days\",\n        \"frequency\": \"constant\",\n        \"additional_details\": \"Associated with headache\"\n      },\n      {\n        \"symptom_name\": \"sensitivity to light\",\n        \"body_location\": \"eyes\",\n        \"severity\": \"not specified\",\n        \"duration\": \"3 days\",\n        \"frequency\": \"constant\",\n        \"additional_details\": \"Associated with headache\"\n      }\n    ],\n    \"ambiguous_items\": [],\n    \"structured_summary\": \"The patient reports a persistent headache located in the head, accompanied by a mild fever and sensitivity to light, all lasting for 3 days.\"\n  },\n  \"metadata\": {\n    \"agent_name\": \"Symptom Extraction Agent\",\n    \"timestamp\": \"2023-10-01T12:00:00Z\"\n  }\n}"
+}

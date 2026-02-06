@@ -1,0 +1,198 @@
+{
+  "workflow_name": "Enterprise Healthcare Decision Support Platform",
+  "workflow_type": "manager_subagent_with_independent",
+  "version": "1.0.0",
+  "created_at": "2026-02-06T00:00:00Z",
+  "nodes": [
+    {
+      "id": "input_node",
+      "type": "Input",
+      "label": "Patient Symptom Input",
+      "nodeCategory": "input"
+    },
+    {
+      "id": "triage_orchestrator",
+      "type": "Agent",
+      "label": "Triage Orchestrator Manager",
+      "nodeCategory": "agent",
+      "agent_id": "69858825e17e33c11eed19c6",
+      "agent_type": "manager"
+    },
+    {
+      "id": "symptom_extraction_agent",
+      "type": "Agent",
+      "label": "Symptom Extraction Agent",
+      "nodeCategory": "agent",
+      "agent_id": "69858793094c8b2d4207dcb9",
+      "agent_type": "sub_agent"
+    },
+    {
+      "id": "red_flag_detection_agent",
+      "type": "Agent",
+      "label": "Red Flag Detection Agent",
+      "nodeCategory": "agent",
+      "agent_id": "698587a91caa4e686dd66df4",
+      "agent_type": "sub_agent"
+    },
+    {
+      "id": "risk_scoring_agent",
+      "type": "Agent",
+      "label": "Risk Scoring Agent",
+      "nodeCategory": "agent",
+      "agent_id": "698587bf07ec48e3dc90a19d",
+      "agent_type": "sub_agent"
+    },
+    {
+      "id": "specialist_routing_agent",
+      "type": "Agent",
+      "label": "Specialist Routing Agent",
+      "nodeCategory": "agent",
+      "agent_id": "698587d707ec48e3dc90a19e",
+      "agent_type": "sub_agent"
+    },
+    {
+      "id": "safety_reflection_agent",
+      "type": "Agent",
+      "label": "Safety Reflection Agent",
+      "nodeCategory": "agent",
+      "agent_id": "698587f0e17e33c11eed19bd",
+      "agent_type": "sub_agent"
+    },
+    {
+      "id": "professional_review",
+      "type": "Conditional",
+      "label": "Professional Review Checkpoint",
+      "nodeCategory": "conditional"
+    },
+    {
+      "id": "action_planning_agent",
+      "type": "Agent",
+      "label": "Action Planning Agent",
+      "nodeCategory": "agent",
+      "agent_id": "698588081caa4e686dd66e06",
+      "agent_type": "sub_agent"
+    },
+    {
+      "id": "video_escalation_agent",
+      "type": "Agent",
+      "label": "Video Escalation Agent",
+      "nodeCategory": "agent",
+      "agent_id": "69858842b90162af337b1ed7",
+      "agent_type": "independent"
+    },
+    {
+      "id": "location_routing_agent",
+      "type": "Agent",
+      "label": "Location & Routing Agent",
+      "nodeCategory": "agent",
+      "agent_id": "69858862ab4bf65a66ad07bc",
+      "agent_type": "independent"
+    },
+    {
+      "id": "assistant_chatbot_agent",
+      "type": "Agent",
+      "label": "Assistant Chatbot Agent",
+      "nodeCategory": "agent",
+      "agent_id": "698588802237a2c55706b02a",
+      "agent_type": "independent"
+    },
+    {
+      "id": "ehr_integration_agent",
+      "type": "Agent",
+      "label": "EHR Integration Agent",
+      "nodeCategory": "agent",
+      "agent_id": "6985889bb90162af337b1ee6",
+      "agent_type": "independent"
+    },
+    {
+      "id": "insurance_verification_agent",
+      "type": "Agent",
+      "label": "Insurance Verification Agent",
+      "nodeCategory": "agent",
+      "agent_id": "698588bb1caa4e686dd66e26",
+      "agent_type": "independent"
+    },
+    {
+      "id": "output_node",
+      "type": "Output",
+      "label": "Assessment Results",
+      "nodeCategory": "end"
+    }
+  ],
+  "edges": [
+    {
+      "source": "input_node",
+      "target": "triage_orchestrator"
+    },
+    {
+      "source": "triage_orchestrator",
+      "target": "symptom_extraction_agent"
+    },
+    {
+      "source": "triage_orchestrator",
+      "target": "red_flag_detection_agent"
+    },
+    {
+      "source": "triage_orchestrator",
+      "target": "risk_scoring_agent"
+    },
+    {
+      "source": "triage_orchestrator",
+      "target": "specialist_routing_agent"
+    },
+    {
+      "source": "triage_orchestrator",
+      "target": "safety_reflection_agent"
+    },
+    {
+      "source": "symptom_extraction_agent",
+      "target": "professional_review"
+    },
+    {
+      "source": "red_flag_detection_agent",
+      "target": "professional_review"
+    },
+    {
+      "source": "risk_scoring_agent",
+      "target": "professional_review"
+    },
+    {
+      "source": "specialist_routing_agent",
+      "target": "professional_review"
+    },
+    {
+      "source": "safety_reflection_agent",
+      "target": "professional_review"
+    },
+    {
+      "source": "professional_review",
+      "target": "action_planning_agent"
+    },
+    {
+      "source": "action_planning_agent",
+      "target": "output_node"
+    },
+    {
+      "source": "output_node",
+      "target": "video_escalation_agent"
+    },
+    {
+      "source": "output_node",
+      "target": "location_routing_agent"
+    },
+    {
+      "source": "output_node",
+      "target": "ehr_integration_agent"
+    },
+    {
+      "source": "video_escalation_agent",
+      "target": "insurance_verification_agent"
+    }
+  ],
+  "agent_summary": {
+    "total_agents": 12,
+    "manager_agents": 1,
+    "sub_agents": 6,
+    "independent_agents": 5
+  }
+}

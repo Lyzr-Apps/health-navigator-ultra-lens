@@ -1,0 +1,42 @@
+{
+  "agent_name": "Action Planning Agent",
+  "agent_id": "698588081caa4e686dd66e06",
+  "test_message": "Urgency level: Moderate, Risk score: 65, Specialist: Gastroenterology, Approved by Dr. Smith",
+  "expected_purpose": "Sub-agent - Generates recommendations post-professional approval",
+  "timestamp": "2026-02-06T06:27:27.701148",
+  "is_valid_json": true,
+  "validation_errors": [],
+  "actual_response": {
+    "status": "success",
+    "result": {
+      "urgency_level": "SOON",
+      "immediate_actions": [
+        "Schedule an appointment with your gastroenterologist within 1-3 days."
+      ],
+      "self_monitoring_guidelines": [
+        "Keep a daily symptom diary noting any changes or new symptoms.",
+        "Monitor for any worsening of your symptoms."
+      ],
+      "when_to_seek_help": [
+        "Contact your doctor if your symptoms worsen before your scheduled appointment.",
+        "Seek immediate care if you experience severe symptoms."
+      ],
+      "preparation_for_visit": [
+        "Prepare a list of your current medications and any symptoms you have been experiencing.",
+        "Write down any questions or concerns you would like to discuss with the doctor."
+      ],
+      "lifestyle_considerations": [
+        "Stay hydrated and maintain a balanced diet.",
+        "Avoid any known triggers that may exacerbate your symptoms."
+      ],
+      "follow_up_timeline": "Schedule an appointment with your gastroenterologist within 1-3 days.",
+      "action_summary": "Ensure to see your gastroenterologist soon to address your current symptoms with professional evaluation.",
+      "important_disclaimer": "This plan is for guidance only and does not replace professional medical advice. Please consult with your healthcare provider for any medical concerns."
+    },
+    "metadata": {
+      "agent_name": "Action Planning Agent",
+      "timestamp": "2023-11-29T10:21:35Z"
+    }
+  },
+  "raw_response": "{\n  \"status\": \"success\",\n  \"result\": {\n    \"urgency_level\": \"SOON\",\n    \"immediate_actions\": [\"Schedule an appointment with your gastroenterologist within 1-3 days.\"],\n    \"self_monitoring_guidelines\": [\"Keep a daily symptom diary noting any changes or new symptoms.\", \"Monitor for any worsening of your symptoms.\"],\n    \"when_to_seek_help\": [\"Contact your doctor if your symptoms worsen before your scheduled appointment.\", \"Seek immediate care if you experience severe symptoms.\"],\n    \"preparation_for_visit\": [\"Prepare a list of your current medications and any symptoms you have been experiencing.\", \"Write down any questions or concerns you would like to discuss with the doctor.\"],\n    \"lifestyle_considerations\": [\"Stay hydrated and maintain a balanced diet.\", \"Avoid any known triggers that may exacerbate your symptoms.\"],\n    \"follow_up_timeline\": \"Schedule an appointment with your gastroenterologist within 1-3 days.\",\n    \"action_summary\": \"Ensure to see your gastroenterologist soon to address your current symptoms with professional evaluation.\",\n    \"important_disclaimer\": \"This plan is for guidance only and does not replace professional medical advice. Please consult with your healthcare provider for any medical concerns.\"\n  },\n  \"metadata\": {\n    \"agent_name\": \"Action Planning Agent\",\n    \"timestamp\": \"2023-11-29T10:21:35Z\"\n  }\n}"
+}

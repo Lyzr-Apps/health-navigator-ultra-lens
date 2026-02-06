@@ -1,0 +1,110 @@
+{
+  "agent_name": "Safety Reflection Agent",
+  "agent_id": "698587f0e17e33c11eed19bd",
+  "agent_purpose": "safety_validation",
+  "description": "Validates outputs for medical safety compliance and regulatory requirements",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "validation_passed": "boolean",
+      "safety_violations": [
+        {
+          "violation_type": "string",
+          "severity": "string",
+          "description": "string",
+          "affected_output": "string"
+        }
+      ],
+      "disclaimer_present": "boolean",
+      "tone_assessment": "string",
+      "compliance_score": "number",
+      "required_corrections": [
+        "string"
+      ],
+      "approval_status": "string",
+      "safety_summary": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "validation_passed": false,
+      "safety_violations": [
+        {
+          "violation_type": "Direct diagnosis",
+          "severity": "CRITICAL",
+          "description": "The output makes a diagnostic statement by suggesting the user likely has pneumonia.",
+          "affected_output": "Based on your symptoms, you likely have pneumonia."
+        },
+        {
+          "violation_type": "Medication recommendation",
+          "severity": "CRITICAL",
+          "description": "The output recommends taking antibiotics, which is a prescription recommendation.",
+          "affected_output": "Take antibiotics."
+        }
+      ],
+      "disclaimer_present": false,
+      "tone_assessment": "too alarmist",
+      "compliance_score": 0,
+      "required_corrections": [
+        "Remove the diagnostic statement suggesting the user likely has pneumonia.",
+        "Remove the recommendation to take antibiotics.",
+        "Add a disclaimer that this is not medical advice.",
+        "Include a recommendation to consult a healthcare provider.",
+        "Use a calm and supportive tone.",
+        "Include guidance for calling 911 or visiting ER if the situation is urgent."
+      ],
+      "approval_status": "REJECTED",
+      "safety_summary": "The output contains a direct diagnosis and a prescription recommendation, both of which are critical violations. It lacks necessary disclaimers, and the tone is alarmist."
+    },
+    "metadata": {
+      "agent_name": "Safety Reflection Agent",
+      "timestamp": "2023-10-17T12:00:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T06:27:23.335807",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "validation_passed": false,
+      "safety_violations": [
+        {
+          "violation_type": "Direct diagnosis",
+          "severity": "CRITICAL",
+          "description": "The output makes a diagnostic statement by suggesting the user likely has pneumonia.",
+          "affected_output": "Based on your symptoms, you likely have pneumonia."
+        },
+        {
+          "violation_type": "Medication recommendation",
+          "severity": "CRITICAL",
+          "description": "The output recommends taking antibiotics, which is a prescription recommendation.",
+          "affected_output": "Take antibiotics."
+        }
+      ],
+      "disclaimer_present": false,
+      "tone_assessment": "too alarmist",
+      "compliance_score": 0,
+      "required_corrections": [
+        "Remove the diagnostic statement suggesting the user likely has pneumonia.",
+        "Remove the recommendation to take antibiotics.",
+        "Add a disclaimer that this is not medical advice.",
+        "Include a recommendation to consult a healthcare provider.",
+        "Use a calm and supportive tone.",
+        "Include guidance for calling 911 or visiting ER if the situation is urgent."
+      ],
+      "approval_status": "REJECTED",
+      "safety_summary": "The output contains a direct diagnosis and a prescription recommendation, both of which are critical violations. It lacks necessary disclaimers, and the tone is alarmist."
+    },
+    "metadata": {
+      "agent_name": "Safety Reflection Agent",
+      "timestamp": "2023-10-17T12:00:00Z"
+    }
+  },
+  "test_passed": true
+}

@@ -1,0 +1,78 @@
+{
+  "agent_name": "Assistant Chatbot Agent",
+  "agent_id": "698588802237a2c55706b02a",
+  "agent_purpose": "navigation_assistant",
+  "description": "Assists users with app navigation and redirects medical questions to triage",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "response_type": "string",
+      "message": "string",
+      "suggested_actions": [
+        {
+          "action_label": "string",
+          "action_type": "string",
+          "action_target": "string"
+        }
+      ],
+      "related_features": [
+        "string"
+      ],
+      "needs_triage_redirect": "boolean"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "response_type": "navigation_help",
+      "message": "I can help with that! Here's how to book a video consultation with a doctor:",
+      "suggested_actions": [
+        {
+          "action_label": "Book Video Consultation",
+          "action_type": "navigate",
+          "action_target": "video_consultation_booking_page"
+        }
+      ],
+      "related_features": [
+        "Book Video Consultation",
+        "Find Hospitals"
+      ],
+      "needs_triage_redirect": false
+    },
+    "metadata": {
+      "agent_name": "Assistant Chatbot Agent",
+      "timestamp": "2023-10-14T12:00:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T06:27:48.717548",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "response_type": "navigation_help",
+      "message": "I can help with that! Here's how to book a video consultation with a doctor:",
+      "suggested_actions": [
+        {
+          "action_label": "Book Video Consultation",
+          "action_type": "navigate",
+          "action_target": "video_consultation_booking_page"
+        }
+      ],
+      "related_features": [
+        "Book Video Consultation",
+        "Find Hospitals"
+      ],
+      "needs_triage_redirect": false
+    },
+    "metadata": {
+      "agent_name": "Assistant Chatbot Agent",
+      "timestamp": "2023-10-14T12:00:00Z"
+    }
+  },
+  "test_passed": true
+}

@@ -1,0 +1,91 @@
+{
+  "agent_name": "Red Flag Detection Agent",
+  "agent_id": "698587a91caa4e686dd66df4",
+  "agent_purpose": "red_flag_detection",
+  "description": "Detects critical symptom patterns requiring immediate medical attention",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "red_flag_detected": "boolean",
+      "severity": "string",
+      "red_flag_patterns": [
+        {
+          "pattern_name": "string",
+          "matched_symptoms": [
+            "string"
+          ],
+          "severity": "string",
+          "reason": "string"
+        }
+      ],
+      "immediate_action_required": "boolean",
+      "recommended_action": "string",
+      "escalation_triggered": "boolean",
+      "safety_message": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "red_flag_detected": true,
+      "severity": "CRITICAL",
+      "red_flag_patterns": [
+        {
+          "pattern_name": "Neurological",
+          "matched_symptoms": [
+            "sudden severe headache",
+            "confusion",
+            "slurred speech",
+            "numbness on right side"
+          ],
+          "severity": "CRITICAL",
+          "reason": "These symptoms are indicative of a potential stroke or other serious neurological event and require immediate medical attention."
+        }
+      ],
+      "immediate_action_required": true,
+      "recommended_action": "Call 911 immediately for emergency medical assistance.",
+      "escalation_triggered": true,
+      "safety_message": "These symptoms are potentially life-threatening and require immediate evaluation by a healthcare professional. Do not delay in seeking emergency help."
+    },
+    "metadata": {
+      "agent_name": "Red Flag Detection Agent",
+      "timestamp": "2023-11-30T16:31:39Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T06:26:55.696483",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "red_flag_detected": true,
+      "severity": "CRITICAL",
+      "red_flag_patterns": [
+        {
+          "pattern_name": "Neurological",
+          "matched_symptoms": [
+            "sudden severe headache",
+            "confusion",
+            "slurred speech",
+            "numbness on right side"
+          ],
+          "severity": "CRITICAL",
+          "reason": "These symptoms are indicative of a potential stroke or other serious neurological event and require immediate medical attention."
+        }
+      ],
+      "immediate_action_required": true,
+      "recommended_action": "Call 911 immediately for emergency medical assistance.",
+      "escalation_triggered": true,
+      "safety_message": "These symptoms are potentially life-threatening and require immediate evaluation by a healthcare professional. Do not delay in seeking emergency help."
+    },
+    "metadata": {
+      "agent_name": "Red Flag Detection Agent",
+      "timestamp": "2023-11-30T16:31:39Z"
+    }
+  },
+  "test_passed": true
+}

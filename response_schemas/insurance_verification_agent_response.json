@@ -1,0 +1,153 @@
+{
+  "agent_name": "Insurance Verification Agent",
+  "agent_id": "698588bb1caa4e686dd66e26",
+  "agent_purpose": "insurance_verification",
+  "description": "Verifies patient insurance eligibility and coverage for healthcare services",
+  "response_schema": {
+    "status": "string",
+    "result": {
+      "verification_id": "string",
+      "coverage_status": "string",
+      "insurance_details": {
+        "payer_name": "string",
+        "member_id": "string",
+        "group_number": "string",
+        "plan_name": "string",
+        "effective_date": "string",
+        "termination_date": "string"
+      },
+      "telehealth_coverage": {
+        "covered": "boolean",
+        "copay_amount": "number",
+        "coinsurance_percentage": "number",
+        "requires_authorization": "boolean",
+        "visit_limit": "string",
+        "restrictions": [
+          "string"
+        ]
+      },
+      "financial_summary": {
+        "estimated_patient_cost": "number",
+        "deductible_remaining": "number",
+        "out_of_pocket_remaining": "number",
+        "in_network": "boolean"
+      },
+      "authorization_requirements": {
+        "pre_auth_required": "boolean",
+        "referral_required": "boolean",
+        "auth_status": "string",
+        "auth_number": "string"
+      },
+      "verification_timestamp": "string",
+      "data_source": "string",
+      "coverage_notes": [
+        "string"
+      ],
+      "billing_disclaimer": "string"
+    },
+    "metadata": {
+      "agent_name": "string",
+      "timestamp": "string"
+    }
+  },
+  "example_response": {
+    "status": "success",
+    "result": {
+      "verification_id": "VER123456789",
+      "coverage_status": "ACTIVE",
+      "insurance_details": {
+        "payer_name": "BCBS",
+        "member_id": "BC987654",
+        "group_number": "GRP123456",
+        "plan_name": "Premium Plus Plan",
+        "effective_date": "2023-01-01",
+        "termination_date": "2023-12-31"
+      },
+      "telehealth_coverage": {
+        "covered": true,
+        "copay_amount": 30.0,
+        "coinsurance_percentage": 20,
+        "requires_authorization": false,
+        "visit_limit": "10 visits per year",
+        "restrictions": [
+          "Video consultation only",
+          "Must use in-network provider"
+        ]
+      },
+      "financial_summary": {
+        "estimated_patient_cost": 30.0,
+        "deductible_remaining": 500.0,
+        "out_of_pocket_remaining": 2000.0,
+        "in_network": true
+      },
+      "authorization_requirements": {
+        "pre_auth_required": false,
+        "referral_required": false,
+        "auth_status": "not_required",
+        "auth_number": ""
+      },
+      "verification_timestamp": "2023-11-01T12:00:00Z",
+      "data_source": "real_time_api",
+      "coverage_notes": [
+        "Telehealth visits are covered under the Premium Plus Plan."
+      ],
+      "billing_disclaimer": "Coverage verification is not a guarantee of payment. Final coverage is determined by the insurance payer."
+    },
+    "metadata": {
+      "agent_name": "Insurance Verification Agent",
+      "timestamp": "2023-11-01T12:00:00Z"
+    }
+  },
+  "is_actual_tested": true,
+  "test_timestamp": "2026-02-06T06:27:55.635223",
+  "test_message_used": "Hello, provide a sample response",
+  "actual_test_response": {
+    "status": "success",
+    "result": {
+      "verification_id": "VER123456789",
+      "coverage_status": "ACTIVE",
+      "insurance_details": {
+        "payer_name": "BCBS",
+        "member_id": "BC987654",
+        "group_number": "GRP123456",
+        "plan_name": "Premium Plus Plan",
+        "effective_date": "2023-01-01",
+        "termination_date": "2023-12-31"
+      },
+      "telehealth_coverage": {
+        "covered": true,
+        "copay_amount": 30.0,
+        "coinsurance_percentage": 20,
+        "requires_authorization": false,
+        "visit_limit": "10 visits per year",
+        "restrictions": [
+          "Video consultation only",
+          "Must use in-network provider"
+        ]
+      },
+      "financial_summary": {
+        "estimated_patient_cost": 30.0,
+        "deductible_remaining": 500.0,
+        "out_of_pocket_remaining": 2000.0,
+        "in_network": true
+      },
+      "authorization_requirements": {
+        "pre_auth_required": false,
+        "referral_required": false,
+        "auth_status": "not_required",
+        "auth_number": ""
+      },
+      "verification_timestamp": "2023-11-01T12:00:00Z",
+      "data_source": "real_time_api",
+      "coverage_notes": [
+        "Telehealth visits are covered under the Premium Plus Plan."
+      ],
+      "billing_disclaimer": "Coverage verification is not a guarantee of payment. Final coverage is determined by the insurance payer."
+    },
+    "metadata": {
+      "agent_name": "Insurance Verification Agent",
+      "timestamp": "2023-11-01T12:00:00Z"
+    }
+  },
+  "test_passed": true
+}
