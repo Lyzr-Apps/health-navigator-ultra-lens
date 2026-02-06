@@ -30,7 +30,7 @@ import {
   MessageSquare,
   Menu,
   X,
-  Home,
+  Home as HomeIcon,
   ClipboardList,
   History,
   Users,
@@ -1763,7 +1763,7 @@ Severity: ${formData.severity}/10.`
               currentScreen === 'landing' ? 'bg-blue-600' : 'hover:bg-gray-800'
             }`}
           >
-            <Home className="h-5 w-5" />
+            <HomeIcon className="h-5 w-5" />
             <span>Home</span>
           </button>
 
